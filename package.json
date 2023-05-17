@@ -9,5 +9,13 @@
   "keywords": [],
   "author": "r_o_h_a_n",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AfkRohan/text-to-image-stable-diffusion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AfkRohan/text-to-image-stable-diffusion/issues"
+  },
+  "homepage": "https://github.com/AfkRohan/text-to-image-stable-diffusion#readme"
 }
