@@ -1,6 +1,6 @@
 {
   "name": "text-to-image-stable-diffusion",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Text to image generation package. This gives the url of the generated image using stable diffusion.You need a stable diffusion account and an api key from www.stablediffusionapi.com for using this package.The api key is free for first 20 calls.",
   "main": "index.js",
   "scripts": {
