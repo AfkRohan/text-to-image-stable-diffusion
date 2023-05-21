@@ -1,6 +1,6 @@
 const url = "https://stablediffusionapi.com/api/v3/text2img";
-let api_key = "ENTER API KEY"
-let posPrompt,negative_prompt,width,height,samples;
+let api_key = "ENTER API KEY";
+let posPrompt,negative_prompt,width,height,num_of_images=1;
 // Setter function for API KEY
 const setAPIKey = (key) => api_key=key;
 // Setter function for prompt
@@ -20,13 +20,20 @@ const setImageWidth = (w) => {
 const setImageHeight = (h) => {
     height = Math.abs(h);
 }
-
+//Setter for samples
+const setNumberOfImages = (num)=>{
+    if(num<=0 || num>4){
+        console.error('Number of images must be between 1 and 4');
+    }
+    num_of_images=num;
+}
 // General function to set all the parameters for generating images
-const setParameters = (api_key='ENTER API KEY',prompt="Dog",neg_prompt = '',width=512,height=512)=>{
+const setParameters = (api_key='ENTER API KEY',prompt="Dog",neg_prompt = '',width=512,height=512,num=1)=>{
    setAPIKey(api_key);
    setPrompt(prompt);
    setNegativePrompt(neg_prompt);
    setImageDimensions(width,height);
+   setNumberOfImages(num);
 }
 
 // Function to generate images
@@ -42,7 +49,7 @@ const generateImages = async () =>{
     "negative_prompt": `${negative_prompt}`,
     "width": `${width}`,
     "height": `${height}`,
-    "samples": 1,
+    "samples": num_of_images,
     "num_inference_steps": "20",
     "safety_checker": "no",
     "enhance_prompt": "yes",
@@ -86,6 +93,7 @@ const stableDiffusionGenerate = {
     setImageDimensions,
     setParameters,
     generateImages,
+    setNumberOfImages
 }
 
 export default stableDiffusionGenerate;
